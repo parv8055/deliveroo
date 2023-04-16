@@ -51,7 +51,6 @@ const HomeScreen = () => {
                         description="Why not support your local restaurant tonight!"
                     />
                 </ScrollView>
-                
     </SafeAreaView>
   )
 }
