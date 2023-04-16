@@ -20,7 +20,7 @@ export default function PreparingOrderScreen() {
             <Animatable.Image
                 source={require("../assets/gifff.gif")}
                 iterationCount={1}
-                className="h-96"
+                className="h-40 w-full"
             />
             <Animatable.Text
                 animation="slideInLeft"
