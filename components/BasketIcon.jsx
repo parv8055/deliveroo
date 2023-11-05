@@ -1,28 +1,32 @@
-import { View, Text, TouchableOpacity } from 'react-native';
-import React from 'react'
-import { useSelector } from 'react-redux';
-import { selectBasketItems, selectBasketTotal } from '../features/basketSlice';
-import { useNavigation } from '@react-navigation/native';
-import Currency from  "react-currency-formatter";
+import { View, Text, TouchableOpacity } from "react-native";
+import React from "react";
+import { useSelector } from "react-redux";
+import { selectBasketItems, selectBasketTotal } from "../features/basketSlice";
+import { useNavigation } from "@react-navigation/native";
+import Currency from "react-currency-formatter";
 
-const BasketIcon = () => {
-    const items = useSelector(selectBasketItems);
-    const navigation = useNavigation();
-    const BasketTotal  = useSelector(selectBasketTotal);
+const BasketIcon = ({ title }) => {
+  const items = useSelector(selectBasketItems);
+  const navigation = useNavigation();
+  const BasketTotal = useSelector(selectBasketTotal);
 
-    // if (items.length == 0) return null;
+  // if (items.length == 0) return null;
 
   return (
-    <View className="absolute bottom-10 w-full z-50">
-      <TouchableOpacity onPress={() => navigation.navigate("Basket")} className="mx-5 bg-[#00CCBB] p-4 rounded-lg flex-row items-center space-x-1">
-        <Text className='text-white font-extrabold text-lg bg-[#01A296] py-1 px-2'>{items.length}</Text>
-        <Text className='flex-1 text-white font-extrabold text-lg text-center'>View Basket</Text>
-        <Text className="text-lg text-white font-extrabold">
-          <Currency quantity={BasketTotal} currency="INR" />
-        </Text>
-      </TouchableOpacity>
-    </View>
-  )
-}
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate("Basket", {
+          title,
+        })
+      }
+      className="absolute bottom-0 z-50 items-center w-full p-2 bg-red-500 shadow-md rounded-t-xl"
+    >
+      <Text className="px-2 py-1 text-lg font-extrabold text-white">{items.length} items added</Text>
+      <Text className="flex-1 text-sm font-extrabold text-center text-white">
+       Congratulations! Your delivery is free.
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
-export default BasketIcon
+export default BasketIcon;

@@ -1,10 +1,10 @@
 {
   "expo": {
     "name": "deliveroo",
-    "slug": "rndeliveroo",
+    "slug": "delevero",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -22,18 +22,19 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.parv1111.rndeliveroo"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/logo.png"
     },
     "extra": {
       "eas": {
-        "projectId": "43e87491-db01-4945-8c43-4e19fd0d2db8"
+        "projectId": "1d8f6dd0-55cf-40d2-bada-322905bc22bd"
       }
-    }
+    },
+    "owner": "parv1111"
   }
 }
